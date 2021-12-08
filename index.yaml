@@ -1,0 +1,9 @@
+page:
+  siteTitle: Eric Drechsel's Profile
+template:
+  name: /templates/layouts/note
+  theme: pink
+  sidebar:
+    collapsed: true
+  urlStrategy: pretty
+
