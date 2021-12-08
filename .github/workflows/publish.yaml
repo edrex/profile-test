@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build emanote site 🔧
         run: |
+          rm README.md
           mkdir -p output.docker 
           docker run -v $PWD:/data sridca/emanote emanote --layers /data gen /data/output.docker
           cp -r output.docker output  # Ditch docker created root-owned files
@@ -20,4 +21,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output/
-          # cname: profile-test.pdxhub.org
+          cname: profile-test.pdxhub.org
